@@ -8,7 +8,7 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $people = Person::orderBy('date', 'desc')->get();
+        $people = Person::query()->orderBy('date', 'desc')->get();
         return view('acs', compact('people'));
     }
 
@@ -21,14 +21,9 @@ class PersonController extends Controller
             'go_date' => 'required|date'
         ]);
 
-        Person::create([
-            'last_name' => $validated['last_name'],
-            'first_name' => $validated['first_name'],
-            'middle_name' => $validated['middle_name'],
-            'date' => $validated['go_date']
-        ]);
+        Person::create($validated);
 
-        return redirect('/acs');
+        return redirect()->route('person.index');
     }
     public function destroy(Request $request)
     {
@@ -39,6 +34,6 @@ class PersonController extends Controller
         $person = Person::findOrFail($request->pass_id);
         $person->delete();
 
-        return redirect('/acs');
+        return redirect()->route('person.index');
     }
 }
