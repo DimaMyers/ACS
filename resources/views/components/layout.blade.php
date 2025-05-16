@@ -17,9 +17,9 @@
                 {{config('app.name')}}
             </a>
             <nav class="flex gap-8 text-xl font-semibold text-gray-300">
-                <a class="hover:text-white" href="/">Главная</a>
-                <a class="hover:text-white" href="/acs">ACS</a>
-                <a class="hover:text-white" href="/acs/add">Редактировать</a>
+                <a class="hover:text-white" href="{{ route('home') }}">Главная</a>
+                <a class="hover:text-white" href="{{ route('person.index') }}">ACS</a>
+                <a class="hover:text-white" href="{{ route('person.add') }}">Редактировать</a>
             </nav>
         </div>
     </header>

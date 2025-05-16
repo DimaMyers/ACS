@@ -58,7 +58,7 @@
     </head>
     <body>
         <div class="form-add">
-            <form method="POST" action="/acs/add">
+            <form method="POST" action="{{ route('person.store') }}">
                 @csrf
                 <div class="form-f">
                     <h3 class="text-2XL b1">
@@ -81,7 +81,7 @@
         </div>
 
         <div>
-            <form method="POST" action="/acs/add">
+            <form method="POST" action="{{ route('person.destroy') }}">
                 @csrf
                 @method('DELETE')
                 <div class="form-f">

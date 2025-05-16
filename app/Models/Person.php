@@ -12,4 +12,8 @@ class Person extends Model
         'first_name',
         'middle_name'
     ];
+
+    protected $casts = [
+        'date' => 'date'
+    ];
 }

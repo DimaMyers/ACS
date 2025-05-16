@@ -32,7 +32,7 @@
             <tbody>
             @foreach($people as $person)
                 <tr>
-                    <td>{{ $person->date }}</td>
+                    <td>{{ $person->date->format('d.m.Y') }}</td>
                     <td>{{ $person->id }}</td>
                     <td>{{ $person->last_name }}</td>
                     <td>{{ $person->first_name }}</td>
